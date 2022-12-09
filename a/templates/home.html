@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+صفحه اصلی
+{% endblock %}
+
+{% block body %}
+<h3>home page</h3>
+<hr/>
+{% for todo in all %}
+<a href={% url 'detail' todo.id %}>
+<h1> {{ todo.title }}</h1>
+</a>
+<h3>{{ todo.body }}</h3>
+<p>{{ todo.created }}</p>
+    <hr/><hr/>
+{% endfor %}
+{% endblock %}
